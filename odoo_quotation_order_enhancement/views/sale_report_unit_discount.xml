@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <template id="sale_order_document_inherit_sale_management" name="Order Document"
+              inherit_id="sale.report_saleorder_document">
+
+        <xpath expr="//table[@class='table table-sm o_main_table']/tbody/t[2]/tr/t/td[@name='td_priceunit']"
+               position="replace">
+            <td name="td_priceunit" class="text-right">
+                <span t-field="line.price_unit"/>
+            </td>
+            <td t-attf-class="text-right {{ 'd-none d-sm-table-cell' if report_type == 'html' else '' }}">
+                <div
+                        t-if="line.discount &gt;= 0"
+                        t-field="line.price_unit"
+                        t-att-style="line.discount and 'text-decoration: line-through' or None"
+                        t-att-class="(line.discount and 'text-dark' or '') + ' text-right'"
+                />
+                <div t-if="line.discount">
+                    <t t-esc="(1-line.discount / 100.0) * line.price_unit"
+                       t-options='{"widget": "float", "decimal_precision": "Product Price"}'/>
+                </div>
+            </td>
+        </xpath>
+    </template>
+</odoo>
