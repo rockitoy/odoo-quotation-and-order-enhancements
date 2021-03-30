@@ -20,5 +20,12 @@
                 </div>
             </td>
         </xpath>
+        <xpath expr="//div[@name='expiration_date']"
+               position="after">
+            <div t-if="doc.commitment_date" class="col-auto mw-100 mb-2">
+                <strong>Delivery Date:</strong>
+                <p class="m-0" t-field="doc.commitment_date"/>
+            </div>
+        </xpath>
     </template>
 </odoo>
