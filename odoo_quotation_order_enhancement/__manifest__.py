@@ -5,12 +5,12 @@
 
 {
     'name': 'Odoo Quotation and Order Enhancement',
-    'version': '14.0.0.4',
+    'version': '14.0.0.6',
     'category': 'sale',
     'sequence': 1,
     'author': 'Technaureus Info Solutions Pvt. Ltd.',
-    'summary': 'Unit Discount in Sale order report',
-    'description': """Unit Discount in Sale order report
+    'summary': 'Unit Discount and Delivery Date in Sale order report',
+    'description': """Unit Discount and Delivery Date in Sale order report
     """,
     'website': 'http://www.technaureus.com',
     'depends': ['sale'],
