@@ -5,7 +5,7 @@
 
 {
     'name': 'Odoo Quotation and Order Enhancement',
-    'version': '14.0.0.2',
+    'version': '14.0.0.4',
     'category': 'sale',
     'sequence': 1,
     'author': 'Technaureus Info Solutions Pvt. Ltd.',
