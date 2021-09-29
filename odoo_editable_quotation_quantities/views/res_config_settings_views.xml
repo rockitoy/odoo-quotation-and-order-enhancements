@@ -1,0 +1,12 @@
+<odoo>
+    <record id="odoo_editable_quotations_view" model="ir.ui.view">
+        <field name="name">odoo.editable.quotations.view</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='tag_ids']" position="after">
+                <field name="quotation_quantity"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
