@@ -1,0 +1,47 @@
+<odoo>
+    <record id="sale_order_options_view_inherit" model="ir.ui.view">
+        <field name="name">sale.order.options.view.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page/field[@name='sale_order_option_ids']" position="attributes">
+                <attribute name="widget">section_and_note_one2many</attribute>
+            </xpath>
+            <xpath expr="//field[@name='sale_order_option_ids']/tree" position="inside">
+                <control>
+                    <create string="Add a section" context="{'default_display_type': 'line_section'}"/>
+                    <create string="Add a note" context="{'default_display_type': 'line_note'}"/>
+                </control>
+                <field name="display_type" invisible="1"/>
+                <field name="customer_lead"/>
+                <field
+                        name="tax_id"
+                        widget="many2many_tags"
+                        options="{'no_create': True}"
+                        domain="[('type_tax_use','=','sale'),('company_id','=',parent.company_id)]"
+                        optional="show"
+                />
+                <field name="margin" optional="hide"/>
+                <field name="purchase_price" optional="hide"/>
+                <field name="margin_percent" class="oe_inline" widget="percentage" optional="hide"/>
+                <field name="price_subtotal"/>
+            </xpath>
+            <xpath expr="//field[@name='sale_order_option_ids']/tree/field[@name='name']" position="attributes">
+                <attribute name="widget">section_and_note_text</attribute>
+            </xpath>
+<!--            <xpath expr="//field[@name='sale_order_option_ids']/tree/field[@name='product_id']" position="attributes">-->
+<!--                <attribute name="attrs">{'required': [('display_type', '=', False)]}-->
+<!--                </attribute>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//field[@name='sale_order_option_ids']/form" position="inside">-->
+<!--                <field name="display_type" invisible="1"/>-->
+<!--                <field name="sequence" invisible="1"/>-->
+<!--                <label for="name" string="Description" attrs="{'invisible': [('display_type', '!=', False)]}"/>-->
+<!--                <label for="name" string="Section Name (eg. Products, Services)"-->
+<!--                       attrs="{'invisible': [('display_type', '!=', 'line_section')]}"/>-->
+<!--                <label for="name" string="Note" attrs="{'invisible': [('display_type', '!=', 'line_note')]}"/>-->
+<!--                <field name="name"/>-->
+<!--            </xpath>-->
+        </field>
+    </record>
+</odoo>

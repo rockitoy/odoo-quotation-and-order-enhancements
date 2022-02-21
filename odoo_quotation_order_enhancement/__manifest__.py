@@ -5,7 +5,7 @@
 
 {
     'name': 'Odoo Quotation and Order Enhancement',
-    'version': '14.0.0.7',
+    'version': '14.0.0.9',
     'category': 'sale',
     'sequence': 1,
     'author': 'Technaureus Info Solutions Pvt. Ltd.',
@@ -13,9 +13,11 @@
     'description': """Unit Discount and Delivery Date in Sale order report
     """,
     'website': 'http://www.technaureus.com',
-    'depends': ['sale'],
+    'depends': ['sale', 'sale_management', 'sale_margin'],
     'demo': [],
-    'data': ['views/sale_report_unit_discount.xml'],
+    'data': ['views/sale_report_unit_discount.xml',
+             'views/sale_order_option_view.xml'
+             ],
     'installable': True,
     'application': True,
     'auto_install': False
