@@ -5,7 +5,7 @@
 {
     "name": 'Odoo Editable Quotation Quantities',
     "category": "sales",
-    "version": '14.0.0.6',
+    "version": '14.0.0.7',
     "sequence": 1,
     'summary': 'Odoo Editable Quotation Quantities',
     'website': 'http://www.technaureus.com/',
@@ -18,7 +18,8 @@
     ],
     "demo": [],
     "data": ['views/res_config_settings_views.xml',
-             'views/templates.xml'
+             'views/templates.xml',
+             'views/assets.xml'
              ],
     'images': [''],
     'installable': True,
